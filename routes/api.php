@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/location', \App\Http\Controllers\ListLocationController::class);
+Route::get('/location/{location}', \App\Http\Controllers\ShowLocationController::class);
+Route::get('/location/{location}/equipment', \App\Http\Controllers\ListLocationEquipmentController::class);
+Route::get('/location/{location}/booking', \App\Http\Controllers\ListLocationBookingsController::class);
+Route::post('/booking', \App\Http\Controllers\StoreBookingsController::class);
