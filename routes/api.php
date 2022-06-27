@@ -18,4 +18,4 @@ Route::get('/location', \App\Http\Controllers\ListLocationController::class);
 Route::get('/location/{location}', \App\Http\Controllers\ShowLocationController::class);
 Route::get('/location/{location}/equipment', \App\Http\Controllers\ListLocationEquipmentController::class);
 Route::get('/location/{location}/booking', \App\Http\Controllers\ListLocationBookingsController::class);
-Route::post('/booking', \App\Http\Controllers\StoreBookingsController::class);
+Route::post('/booking', \App\Http\Controllers\StoreBookingController::class);

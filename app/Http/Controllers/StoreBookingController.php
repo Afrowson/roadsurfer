@@ -8,7 +8,7 @@ use App\Models\Booking;
 use App\Models\Equipment;
 use Illuminate\Support\Carbon;
 
-class StoreBookingsController extends Controller
+class StoreBookingController extends Controller
 {
     public function __invoke(StoreBookingsRequest $request)
     {
@@ -23,7 +23,7 @@ class StoreBookingsController extends Controller
             ->where('equipment_id', $equipment->id)
             ->first();
         if (isset($doubleBooking)) {
-            return response(__('equipment.double_booked'), 422);
+            return response(['error' => __('equipment.double_booked')], 422);
         }
 
         $bookedDays = $bookedToDate->diffInDays($bookedFromDate);

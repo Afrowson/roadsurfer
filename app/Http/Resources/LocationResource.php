@@ -11,7 +11,6 @@ class LocationResource extends BaseResource
 {
     public function data(Request $request): array
     {
-
         return [
             'name' => $this->name,
             $this->mergeWhenCollection([
